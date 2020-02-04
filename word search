@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class GFG
+{
+	public static void main(String[] args) {
+	        int count=0,f=0,pos=0;
+		String a="John and Harry are my friends out of the both my best buddy is John. John, which is my best buddy belongs to USA, where USA is must powerful nation";
+		 a=a.toLowerCase();
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the word to count");
+		String b=scan.next();
+		b=b.toLowerCase();
+		int l=b.length();
+		String ar[]=a.split(" ");
+		for(int i=0;i<ar.length;i++)
+		{
+		         f=0;
+		         if(ar[i].equals(b))
+		                 {
+		                         count++;
+		                         pos=i;
+		                         System.out.println(count+ "word found at = "+ pos);
+		                 }
+		         else if(ar[i].length()==l+1)
+		         {
+		                 String a1[]=ar[i].split("");
+		                 String c[]=b.split("");
+		                 for(int j=0;j<a1.length-1;j++)
+		                  {
+		                      f=0;
+		                      if (a1[j].equals(c[j]))
+		                         f=1;
+		                      if(f==0)
+		                      {
+		                         break;
+		                      }
+		                  }
+		                      if(f==1)
+		                      {
+		                         count++;
+		                         pos=i;
+		                         System.out.println(count+ " word found at = "+ pos);
+		                       }   
+		         }
+		}
+		System.out.println("number of entered word is =" + count);
+	}
+}
